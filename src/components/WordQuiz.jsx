@@ -4,11 +4,18 @@ import "../styles/wordQuiz.css";
 
 const WordQuiz = (props) => {
   const displayQuiz = props.displayQuiz;
+  const startQuiz = props.startQuiz;
   return (
     <div className="wordQuizContainer">
       <div className="wordQuiz">
         <p>初級レベル / Basic Level</p>
-        <button>テストする</button>
+        <button
+          onClick={() => {
+            startQuiz();
+          }}
+        >
+          テストする
+        </button>
         <button
           onClick={() => {
             displayQuiz("basic");
@@ -19,7 +26,13 @@ const WordQuiz = (props) => {
       </div>
       <div className="wordQuiz">
         <p>上級レベル / Advance Level</p>
-        <button>テストする</button>
+        <button
+          onClick={() => {
+            startQuiz();
+          }}
+        >
+          テストする
+        </button>
         <button
           onClick={() => {
             displayQuiz("advance");

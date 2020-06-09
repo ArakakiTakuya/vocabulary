@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FirstScreen from "./components/FirstScreen";
 import MainScreen from "./components/MainScreen";
+import TestScreen from "./components/TestScreen";
 
 function App() {
   const [screenStatus, changeScreen] = useState("first");
@@ -12,7 +13,7 @@ function App() {
       ) : screenStatus === "main" ? (
         <MainScreen changeScreen={changeScreen} />
       ) : (
-        <></>
+        <TestScreen />
       )}
     </div>
   );

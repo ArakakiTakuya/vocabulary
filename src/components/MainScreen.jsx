@@ -3,7 +3,8 @@ import Navbar from "./Navbar";
 import WordQuiz from "./WordQuiz";
 import WordList from "./WordList";
 
-const MainScreen = () => {
+const MainScreen = (props) => {
+  const changeScreen = props.changeScreen;
   const [words, setWords] = useState([]);
   const [displayStatus, toggleDisplay] = useState(false);
   const [level, setLevel] = useState("");
@@ -11,19 +12,23 @@ const MainScreen = () => {
   function displayQuiz(level) {
     fetchData(level);
     toggleDisplay(!displayStatus);
-    setLevel(level);
+  }
+
+  function startQuiz() {
+    changeScreen("start");
   }
 
   async function fetchData(level) {
     const prom = await fetch(`/api/words/${level}`);
     const data = await prom.json();
     setWords(data.words);
+    setLevel(level);
   }
 
   return (
     <>
       <Navbar />
-      <WordQuiz displayQuiz={displayQuiz} />
+      <WordQuiz displayQuiz={displayQuiz} startQuiz={startQuiz} />
       {displayStatus ? <WordList words={words} level={level} /> : null}
     </>
   );
