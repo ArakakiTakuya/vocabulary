@@ -11,7 +11,7 @@ const Start = (props) => {
       <h2>ソフトウェアエンジニアのための英単語学習アプリ</h2>
       <button
         onClick={() => {
-          changeScreen(true);
+          changeScreen("main");
         }}
       >
         はじめる

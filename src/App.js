@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import FirstScreen from "./components/FirstScreen";
 
 function App() {
-  const [start, changeScreen] = useState(false);
+  const [screenStatus, changeScreen] = useState("first");
 
   return (
     <div className="App">
-      {!start ? <FirstScreen changeScreen={changeScreen} /> : <p>Start!!</p>}
+      {screenStatus === "first" ? (
+        <FirstScreen changeScreen={changeScreen} />
+      ) : (
+        <p>Start!</p>
+      )}
     </div>
   );
 }
