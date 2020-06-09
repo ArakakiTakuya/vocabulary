@@ -1,0 +1,25 @@
+body {
+  background-color: cornflowerblue;
+}
+
+.container {
+  text-align: center;
+  margin: 250px auto;
+  border: solid 1px white;
+  padding-bottom: 25px;
+  width: 75%;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+button {
+  background-color: white;
+  border-radius: 4px;
+  width: 100px;
+}
