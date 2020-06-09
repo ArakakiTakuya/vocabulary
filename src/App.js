@@ -13,7 +13,7 @@ function App() {
       ) : screenStatus === "main" ? (
         <MainScreen changeScreen={changeScreen} />
       ) : (
-        <TestScreen />
+        <TestScreen changeScreen={changeScreen} />
       )}
     </div>
   );
