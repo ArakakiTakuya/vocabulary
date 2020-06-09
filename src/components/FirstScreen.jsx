@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/firstScreen.css";
 
-const Start = (props) => {
+const firstScreen = (props) => {
   const changeScreen = props.changeScreen;
 
   return (
@@ -20,4 +20,4 @@ const Start = (props) => {
   );
 };
 
-export default Start;
+export default firstScreen;
