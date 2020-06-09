@@ -1,6 +1,9 @@
 // Update with your config settings.
 const config = require("./config");
 
+//require("dotenv").config();
+
+/*
 module.exports = {
   client: "pg",
   connection: config.db.connection,
@@ -14,5 +17,53 @@ module.exports = {
   },
   seeds: {
     directory: "./db/seed",
+  },
+};
+*/
+module.exports = {
+  development: {
+    client: "pg",
+    connection: config.db.connection,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      tableName: "knex_migrations",
+      directory: "./db/migrations",
+    },
+    seeds: {
+      directory: "./db/seed",
+    },
+  },
+  staging: {
+    client: "postgresql",
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./db/migrations",
+      tableName: "knex_migrations",
+    },
+    seeds: {
+      directory: "./db/seeds",
+    },
+  },
+  production: {
+    client: "postgresql",
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./db/migrations",
+      tableName: "knex_migrations",
+    },
+    seeds: {
+      directory: "./db/seeds",
+    },
   },
 };

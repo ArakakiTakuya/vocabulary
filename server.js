@@ -2,7 +2,9 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-const db = require("./knex.js");
+const knex = require("knex.js");
+const config = require("./config.js");
+const db = knex(config.db);
 
 app.use(express.static(path.resolve(__dirname, "build")));
 
