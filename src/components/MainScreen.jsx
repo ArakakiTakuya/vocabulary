@@ -6,10 +6,12 @@ import WordList from "./WordList";
 const MainScreen = () => {
   const [words, setWords] = useState([]);
   const [displayStatus, toggleDisplay] = useState(false);
+  const [level, setLevel] = useState("");
 
   function displayQuiz(level) {
     fetchData(level);
     toggleDisplay(!displayStatus);
+    setLevel(level);
   }
 
   async function fetchData(level) {
@@ -22,7 +24,7 @@ const MainScreen = () => {
     <>
       <Navbar />
       <WordQuiz displayQuiz={displayQuiz} />
-      {displayStatus ? <WordList words={words} /> : null}
+      {displayStatus ? <WordList words={words} level={level} /> : null}
     </>
   );
 };

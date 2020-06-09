@@ -1,0 +1,11 @@
+.word {
+  display: flex;
+  border: solid 3px white;
+  margin: 30px;
+  padding: 0px 30px;
+}
+
+.word p {
+  color: white;
+  margin-right: 30px;
+}
