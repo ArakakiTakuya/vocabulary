@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../styles/wordQuiz.css";
+
 const WordQuiz = () => {
   return (
     <div className="wordQuizContainer">
