@@ -5,12 +5,15 @@ import WordList from "./WordList";
 
 const MainScreen = () => {
   const [words, setWords] = useState([]);
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const [displayStatus, toggleDisplay] = useState(false);
 
-  async function fetchData() {
-    const prom = await fetch("/api/words");
+  function displayQuiz(level) {
+    fetchData(level);
+    toggleDisplay(!displayStatus);
+  }
+
+  async function fetchData(level) {
+    const prom = await fetch(`/api/words/${level}`);
     const data = await prom.json();
     setWords(data.words);
   }
@@ -18,8 +21,8 @@ const MainScreen = () => {
   return (
     <>
       <Navbar />
-      <WordQuiz />
-      <WordList words={words} />
+      <WordQuiz displayQuiz={displayQuiz} />
+      {displayStatus ? <WordList words={words} /> : null}
     </>
   );
 };
