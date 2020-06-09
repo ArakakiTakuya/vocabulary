@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./Navbar";
+import WordQuiz from "./WordQuiz";
 import WordList from "./WordList";
 
 const MainScreen = () => {
@@ -17,6 +18,7 @@ const MainScreen = () => {
   return (
     <>
       <Navbar />
+      <WordQuiz />
       <WordList words={words} />
     </>
   );
