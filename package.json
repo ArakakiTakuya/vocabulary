@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "heroku-postbuild": " yarn build",
     "serve": "node server.js",
     "server": "nodemon server.js",
     "test": "react-scripts test",
