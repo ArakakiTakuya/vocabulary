@@ -3,7 +3,7 @@ const config = require("./config");
 
 module.exports = {
   client: "pg",
-  connection: `postgres://${process.env.USER}@127.0.0.1:5432/vocabulary`,
+  connection: process.env.DATABASE_URL,
   pool: {
     min: 2,
     max: 10,
