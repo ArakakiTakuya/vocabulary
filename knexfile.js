@@ -1,18 +1,52 @@
 // Update with your config settings.
-const config = require("./config");
+require("dotenv").config();
 
 module.exports = {
-  client: "pg",
-  connection: process.env.DATABASE_URL,
-  pool: {
-    min: 2,
-    max: 10,
+  development: {
+    client: "pg",
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      tableName: "knex_migrations",
+      directory: "./db/migrations",
+    },
+    seeds: {
+      directory: "./db/seed",
+    },
   },
-  migrations: {
-    tableName: "knex_migrations",
-    directory: "./db/migrations",
+
+  staging: {
+    client: "postgresql",
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./db/migrations",
+      tableName: "knex_migrations",
+    },
+    seeds: {
+      directory: "./db/seeds",
+    },
   },
-  seeds: {
-    directory: "./db/seed",
+
+  production: {
+    client: "postgresql",
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./db/migrations",
+      tableName: "knex_migrations",
+    },
+    seeds: {
+      directory: "./db/seeds",
+    },
   },
 };
