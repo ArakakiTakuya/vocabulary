@@ -20,7 +20,9 @@ const MainScreen = (props) => {
 
   async function fetchData(level) {
     const prom = await fetch(`/api/words/${level}`);
+    console.log(prom);
     const data = await prom.json();
+    console.log(data);
     setWords(data.words);
     setLevel(level);
   }
