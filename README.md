@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This was created during my time as a student at Code Chrysalis.<br>
+(これはコードクリサリスの生徒のときに作りました。)
 
-## Available Scripts
+# Vocabulary
 
-In the project directory, you can run:
+<img width="1439" alt="vocabulary-screenshot" src="https://user-images.githubusercontent.com/50431801/84504521-093b4400-acf7-11ea-865c-70170e3adafb.png">
 
-### `yarn start`
+# What is Vocabulary?
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Vocabulary is an app which helps software engineer to learn English word related to tech.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<br>
+(Vocabularyはソフトウェアエンジニアがテクニカルな英単語を学ぶのに役立つアプリです。)
 
-### `yarn test`
+<br>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Development
 
-### `yarn build`
+## Database
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project assumes a Postgres database, also, this is not included in the package.json file, so must be installed separately.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Create a database called prima.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To clone and run this application, you'll need Git and Node.js (which comes with yarn) installed on your computer.
 
-### `yarn eject`
+<br>
+(このプロジェクトはデータベースとしてPostgresを使うことを想定しています。また最初はpackage.jsonファイルが含まれていないので。インストールする必要があります。)
+<br><br>
+(vocabularyというデータベースを作ってください。)
+<br><br>
+(このアプリをクローン、実行するためにGitとnode.jsが必要です。自身のコンピュータにインストールしてください。)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<br>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
+1. Clone this repository
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+$ git clone https://github.com/ArakakiTakuya/vocabulary.git
+```
 
-## Learn More
+<br>
+2. Go to the repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+$ cd vocabulary
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<br>
+3. Install dependencies
 
-### Code Splitting
+```
+$ yarn
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<br>
+4. Create database, Run migrations and set up the database
 
-### Analyzing the Bundle Size
+```
+$ yarn migrate
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<br>
+5. Insert seed data into database
 
-### Making a Progressive Web App
+```
+$ yarn seed
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<br>
+6. Run the app
 
-### Advanced Configuration
+```
+$ yarn start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<br>
