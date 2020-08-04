@@ -1,13 +1,36 @@
 import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
+
+import Toppage from "./components/Toppage";
+{
+  /*
 import FirstScreen from "./components/FirstScreen";
 import MainScreen from "./components/MainScreen";
 import TestScreen from "./components/TestScreen";
+*/
+}
 
 function App() {
-  const [screenStatus, changeScreen] = useState("first");
+  //const [screenStatus, changeScreen] = useState("first");
 
   return (
     <div className="App">
+      <Router>
+        <main>
+          <Switch>
+            <Route path="/" exact>
+              <Toppage />
+            </Route>
+            <Redirect to="/" />
+          </Switch>
+        </main>
+      </Router>
+      {/*
       {screenStatus === "first" ? (
         <FirstScreen changeScreen={changeScreen} />
       ) : screenStatus === "main" ? (
@@ -15,6 +38,7 @@ function App() {
       ) : (
         <TestScreen changeScreen={changeScreen} />
       )}
+      */}
     </div>
   );
 }
