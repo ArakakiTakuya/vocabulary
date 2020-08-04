@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar style={{ color: "#e0f2f1", backgroundColor: "#e65100" }}>
+      <AppBar style={{ color: "#e0f2f1", background: "transparent" }}>
         <Toolbar>
           <Typography variant="h5" className={classes.title}>
             Vocabulary
