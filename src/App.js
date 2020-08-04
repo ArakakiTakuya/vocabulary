@@ -6,6 +6,7 @@ import {
   Switch,
 } from "react-router-dom";
 
+import Navbar from "./components/Navbar";
 import Toppage from "./components/Toppage";
 {
   /*
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <main>
           <Switch>
             <Route path="/" exact>
